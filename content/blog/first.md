@@ -1,6 +1,8 @@
 +++
-title = "My first post"
-date = 2019-11-27
+title = "サイト開設"
+date = 2025-12-07
 +++
 
-This is my first blog post.
+gasin.dev を取得したノリでサイトを建てました。
+
+今後書く記事はここに置こうかなと思ってます。

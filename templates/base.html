@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
   <meta charset="utf-8">
-  <title>MyBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ config.title | default(value="gasin.dev") }}{% endblock title %}</title>
+  <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
 </head>
 
 <body>
-  <section class="section">
-    <div class="container">
+  <div class="container">
+    <header>
+      <nav>
+        <a href="{{ get_url(path='') }}" class="brand">gasin.dev</a>
+        <div class="nav-links">
+          <a href="{{ get_url(path='blog') }}">Articles</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
       {% block content %} {% endblock content %}
-    </div>
-  </section>
+    </main>
+
+    <footer>
+      <p>&copy; {{ now() | date(format="%Y") }} gasin.dev. Powered by Zola.</p>
+    </footer>
+  </div>
 </body>
 
 </html>

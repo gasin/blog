@@ -1,9 +1,22 @@
 {% extends "base.html" %}
 
+{% block title %}{{ page.title }} | gasin.dev{% endblock title %}
+
 {% block content %}
-<h1 class="title">
-  {{ page.title }}
-</h1>
-<p class="subtitle"><strong>{{ page.date }}</strong></p>
-{{ page.content | safe }}
+<article>
+  <h1 class="title">{{ page.title }}</h1>
+  <div class="post-meta">
+    <time datetime="{{ page.date }}">{{ page.date | date(format="%Y-%m-%d") }}</time>
+    {% if page.taxonomies.tags %}
+    &nbsp; | &nbsp;
+    {% for tag in page.taxonomies.tags %}
+    <span>#{{ tag }}</span>
+    {% endfor %}
+    {% endif %}
+  </div>
+
+  <div class="content">
+    {{ page.content | safe }}
+  </div>
+</article>
 {% endblock content %}

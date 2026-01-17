@@ -8,7 +8,9 @@
   <!-- If you are using pagination, section.pages will be empty.
        You need to use the paginator object -->  
   {% for page in section.pages %}
+  {% if page.extra.hidden is not defined or page.extra.hidden != true %}
   <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+  {% endif %}
   {% endfor %}
 </ul>
 {% endblock content %}

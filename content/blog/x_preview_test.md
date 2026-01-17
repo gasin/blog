@@ -6,6 +6,7 @@ description = "X（Twitter）でリンク共有したときに画像プレビュ
 [extra]
 og_image = "images/normal_go.png"
 og_image_alt = "囲碁盤の画像（プレビュー確認用）"
+hidden = true
 +++
 
 このページは、X（Twitter）でブログURLを貼ったときに **画像プレビューが出るか** を確認するためのテスト記事です。
